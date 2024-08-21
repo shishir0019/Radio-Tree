@@ -1,0 +1,44 @@
+{
+  "name": "@shishir0019/radio-tree",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "private": false,
+  "version": "0.0.1",
+  "main": "./dist/radio-tree.umd.cjs",
+  "module": "./dist/radio-tree.js",
+  "exports": {
+    ".": {
+      "import": "./dist/radio-tree.js",
+      "require": "./dist/radio-tree.umd.cjs"
+    },
+    "./style.css": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "sass": "^1.75.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vue": "^3.4.21",
+    "vue-tsc": "^2.0.6"
+  },
+  "author": "shishir0019",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shishir0019/Radio-Tree.git"
+  },
+  "keywords": [
+    "radio tree",
+    "vue3",
+    "vue",
+    "vuejs"
+  ],
+  "license": "ISC"
+}

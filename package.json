@@ -1,11 +1,12 @@
 {
   "name": "@shishir0019/radio-tree",
+  "description": "A VueJS 3 library for creating interactive hierarchical radio button trees with customizable appearance and easy event handling.",
   "type": "module",
   "files": [
     "dist"
   ],
   "private": false,
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/radio-tree.umd.cjs",
   "module": "./dist/radio-tree.js",
   "exports": {
@@ -40,5 +41,11 @@
     "vue",
     "vuejs"
   ],
-  "license": "ISC"
+  "bugs": {
+    "url": "https://github.com/shishir0019/Radio-Tree/issues"
+  },
+  "homepage": "https://github.com/shishir0019/Radio-Tree#readme",
+  "dependencies": {
+    "@shishir0019/radio-tree": "^0.0.1"
+  }
 }

@@ -1,39 +1,29 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue';
+import { ref } from 'vue';
 
-interface IListItem {
-  id: number | string
-  value: string
-  list?: IListItem[]
-}
+//@ts-ignore
+import { RadioTree } from '@shishir0019/radio-tree'
+import '@shishir0019/radio-tree/style.css'
 
-const list = ref<IListItem[]>([])
-
-const guidGenerator = (): string => {
-    var S4 = function() {
-       return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
-    };
-    return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
-}
-
-const genList = (number: number): IListItem[] => {
-  let list: IListItem[] = []
-  for (let index = 0; index < number; index++) {
-    let item: IListItem = { id: guidGenerator(), value: `item-${index + 1}` }
-    item.list = genList(Math.floor(Math.random() * index))
-    list.push(item)
+const list = ref<any[]>([
+  {
+    label: 'Option 1',
+    value: 'option1',
+    children: [
+      { label: 'Sub-option 1', value: 'suboption1' },
+      { label: 'Sub-option 2', value: 'suboption2' }
+    ]
+  },
+  {
+    label: 'Option 2',
+    value: 'option2'
   }
-  return list
-}
+]);
 
-onMounted(() => {
-  list.value = genList(5)
-})
-
-const fromData = ref<any>({})
+const fromData = ref<any>({ selected: 'suboption2' })
 
 </script>
 
 <template>
-  <radio-tree v-model="fromData.selected" :list="list" children="list" label="value" color="red"></radio-tree>
+  <RadioTree v-model="fromData.selected" :list="list" :options="{ labelColored: true }"></RadioTree>
 </template>
